@@ -1,10 +1,11 @@
 import { Component } from 'react';
 import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './screens/Home';
 import About from './screens/About';
 import Contact from './screens/Contact';
 import Navbar from './components/Navbar';
-import { BrowserRouter, Route } from 'react-router-dom';
+import Post from './components/Posts';
 
 class App extends Component {
 
@@ -13,9 +14,12 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Navbar />
-          <Route exact path='/' component={Home} />
-          <Route exact path='/about' component={About} />
-          <Route exact path='/contact' component={Contact} />
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/about' component={About} />
+            <Route exact path='/contact' component={Contact} />
+            <Route exact path='/:id/:post_title' component={Post} />
+          </Switch>
         </div>
       </BrowserRouter>
     );
