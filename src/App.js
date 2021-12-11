@@ -18,7 +18,7 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             <Route exact path='/about' component={About} />
             <Route exact path='/contact' component={Contact} />
-            <Route exact path='/:id/:post_title' component={Post} />
+            <Route exact path='/:post_title' component={Post} />
           </Switch>
         </div>
       </BrowserRouter>
